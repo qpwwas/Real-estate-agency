@@ -1,0 +1,42 @@
+:root {
+    /* ЦВЕТА */
+    --bg-dark: #050507; /* Глубокий черный */
+    --text-main: #FFFFFF;
+    --text-muted: #A0A0A0;
+    --accent: #D4AF37; /* Золото */
+    --accent-glow: rgba(212, 175, 55, 0.4);
+    
+    /* СТЕКЛО (GLASSMORPHISM) */
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+    --glass-blur: blur(20px);
+    
+    /* ШРИФТЫ И РАЗМЕРЫ */
+    --font-main: 'Manrope', sans-serif;
+    --container-width: 1200px;
+    --header-height: 80px;
+    --radius: 16px;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+/* Декоративный фон (Градиентное пятно) */
+.ambient-glow {
+    position: fixed;
+    top: -20%;
+    right: -10%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.text-accent { color: var(--accent); }

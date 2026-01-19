@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTAU GROUP | Главная</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <div class="ambient-glow"></div> <header class="header glass">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">OTAU <span class="text-accent">GROUP</span></a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link active">Главная</a></li>
+                    <li><a href="pages/about.html" class="nav__link">О компании</a></li>
+                    <li><a href="pages/catalog.html" class="nav__link">Каталог</a></li>
+                    <li><a href="pages/contacts.html" class="nav__link">Контакты</a></li>
+                </ul>
+            </nav>
+            <a href="#modal-login" class="btn btn--outline">Войти</a>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="hero container">
+            <div class="hero__content">
+                <h1 class="hero__title">Архитектура <br>Вашего будущего</h1>
+                <p class="hero__subtitle">Премиальная недвижимость в сердце столицы. Создаем пространство для жизни, а не просто квадратные метры.</p>
+                <div class="hero__actions">
+                    <a href="pages/catalog.html" class="btn btn--primary">Выбрать квартиру</a>
+                    <a href="pages/about.html" class="btn btn--text">Узнать больше →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section container">
+            <h2 class="section__title">Наши направления</h2>
+            <div class="grid-3">
+                <article class="card glass">
+                    <div class="card__icon">🏙️</div>
+                    <h3 class="card__title">Небоскребы</h3>
+                    <p class="card__text">Апартаменты с панорамным видом на высоте птичьего полета.</p>
+                </article>
+                <article class="card glass">
+                    <div class="card__icon">🏡</div>
+                    <h3 class="card__title">Виллы</h3>
+                    <p class="card__text">Уединенные резиденции в экологически чистых районах.</p>
+                </article>
+                <article class="card glass">
+                    <div class="card__icon">🔑</div>
+                    <h3 class="card__title">Инвестиции</h3>
+                    <p class="card__text">Коммерческая недвижимость с высокой доходностью.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__content">
+            <p>&copy; 2026 OTAU GROUP Development.</p>
+        </div>
+    </footer>
+
+    <div id="modal-login" class="modal-overlay">
+        <div class="modal glass">
+            <a href="#" class="modal__close">&times;</a>
+            <h2 class="modal__title">Вход в систему</h2>
+            
+            <form class="form">
+                <div class="form__group">
+                    <input type="email" class="form__input" placeholder=" " required>
+                    <label class="form__label">Email</label>
+                </div>
+                <div class="form__group">
+                    <input type="password" class="form__input" placeholder=" " required>
+                    <label class="form__label">Пароль</label>
+                </div>
+                <button type="submit" class="btn btn--primary full-width">Войти</button>
+            </form>
+            
+            <div class="modal__footer">
+                <span style="color: #777;">Нет аккаунта?</span>
+                <a href="#modal-register" class="link-accent">Зарегистрироваться</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-register" class="modal-overlay">
+        <div class="modal glass">
+            <a href="#" class="modal__close">&times;</a>
+            <h2 class="modal__title">Создать аккаунт</h2>
+            
+            <form class="form">
+                <div class="form__group">
+                    <input type="text" class="form__input" placeholder=" " required>
+                    <label class="form__label">Ваше Имя</label>
+                </div>
+                <div class="form__group">
+                    <input type="email" class="form__input" placeholder=" " required>
+                    <label class="form__label">Email</label>
+                </div>
+                <div class="form__group">
+                    <input type="password" class="form__input" placeholder=" " required>
+                    <label class="form__label">Придумайте пароль</label>
+                </div>
+                <button type="submit" class="btn btn--primary full-width">Зарегистрироваться</button>
+            </form>
+            
+            <div class="modal__footer">
+                <span style="color: #777;">Уже есть аккаунт?</span>
+                <a href="#modal-login" class="link-accent">Войти</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

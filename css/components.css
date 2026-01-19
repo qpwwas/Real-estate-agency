@@ -1,0 +1,165 @@
+/* --- GLASS UTILITY --- */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+}
+
+/* --- BUTTONS --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn--primary {
+    background: var(--accent);
+    color: #000;
+}
+
+.btn--primary:hover {
+    box-shadow: 0 0 20px var(--accent-glow);
+    transform: translateY(-2px);
+}
+
+.btn--outline {
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+}
+
+.btn--outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.btn--small { padding: 8px 20px; font-size: 13px; background: rgba(255,255,255,0.1); color: #fff; }
+.btn--small:hover { background: var(--accent); color: #000; }
+.full-width { width: 100%; }
+
+/* --- TYPOGRAPHY COMPONENTS --- */
+.page-title { font-size: 3rem; margin-bottom: 40px; font-weight: 800; line-height: 1.1; }
+.hero__title { font-size: 4rem; font-weight: 800; margin-bottom: 20px; line-height: 1.1; }
+.hero__subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px; max-width: 600px; }
+.section__title { font-size: 2.5rem; margin-bottom: 40px; }
+
+/* --- CARDS (General & Catalog) --- */
+.card, .catalog-card {
+    border-radius: var(--radius);
+    padding: 30px;
+    transition: 0.4s;
+}
+.card:hover, .catalog-card:hover { transform: translateY(-10px); background: rgba(255,255,255,0.06); }
+.card__icon { font-size: 3rem; margin-bottom: 20px; }
+.card__title { font-size: 1.5rem; margin-bottom: 10px; }
+.card__text { color: var(--text-muted); }
+
+/* Catalog Specifics */
+.catalog-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+.catalog-card__img-box { height: 220px; width: 100%; background: #1a1a20; display: flex; align-items: center; justify-content: center; }
+.catalog-card__placeholder { color: rgba(255,255,255,0.1); font-weight: 800; font-size: 2rem; text-transform: uppercase; }
+.catalog-card__body { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; }
+.catalog-card__top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
+.catalog-card__title { font-size: 1.2rem; }
+.catalog-card__price { color: var(--accent); font-weight: 700; white-space: nowrap; margin-left: 10px; }
+.catalog-card__desc { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; flex-grow: 1; }
+
+/* --- ABOUT PAGE COMPONENTS --- */
+.about-hero { padding: 60px; border-radius: 20px; }
+.text-lead { font-size: 1.2rem; line-height: 1.8; margin-bottom: 40px; max-width: 800px; }
+.stats-grid { display: flex; gap: 60px; margin-top: 40px; }
+.stat-number { display: block; font-size: 3rem; color: var(--accent); font-weight: 800; }
+.stat-label { color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+
+/* --- CONTACTS PAGE COMPONENTS --- */
+.contact-card { padding: 25px; border-radius: 12px; margin-bottom: 20px; }
+.contact-card__title { color: var(--accent); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 5px; }
+.contact-form-wrapper { padding: 40px; border-radius: 20px; }
+.form-title { margin-bottom: 30px; font-size: 1.8rem; }
+
+/* --- FORMS (Modern Input Animation) --- */
+.form__group { position: relative; margin-bottom: 20px; }
+.form__input {
+    width: 100%;
+    padding: 15px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: #fff;
+    transition: 0.3s;
+}
+.form__textarea { height: 120px; resize: none; }
+.form__input:focus { border-color: var(--accent); background: rgba(255,255,255,0.08); }
+
+/* Floating Label Logic */
+.form__label {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    color: #777;
+    pointer-events: none;
+    transition: 0.3s;
+    font-size: 14px;
+}
+.form__input:focus ~ .form__label,
+.form__input:not(:placeholder-shown) ~ .form__label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: var(--accent);
+    background: var(--bg-dark);
+    padding: 0 5px;
+}
+
+/* --- MODAL (Login/Register) --- */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+    opacity: 0; visibility: hidden;
+    transition: 0.4s;
+    display: flex; justify-content: center; align-items: center;
+}
+.modal-overlay:target { opacity: 1; visibility: visible; }
+.modal {
+    width: 100%; max-width: 400px; padding: 40px;
+    border-radius: 20px; position: relative;
+    transform: translateY(50px); transition: 0.4s;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+.modal-overlay:target .modal { transform: translateY(0); }
+.modal__close { position: absolute; top: 20px; right: 20px; font-size: 24px; color: #777; transition: 0.3s; }
+.modal__close:hover { color: #fff; }
+.modal__title { text-align: center; margin-bottom: 30px; font-size: 1.5rem; }
+.modal__footer { margin-top: 20px; text-align: center; font-size: 0.9rem; }
+.link-accent { color: var(--accent); border-bottom: 1px solid transparent; transition: 0.3s; }
+.link-accent:hover { border-color: var(--accent); }
+
+/* --- КАРТИНКИ В КАТАЛОГЕ (Замени или добавь в components.css) --- */
+
+.catalog-card__img-box {
+    height: 250px;       /* Высота блока под картинку */
+    width: 100%;
+    overflow: hidden;    /* Обрезаем все лишнее */
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.catalog-card__img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* ВАЖНО: Фото заполняет блок, сохраняя пропорции */
+    transition: transform 0.6s ease; /* Плавное увеличение */
+    display: block;
+}
+
+/* Эффект зума при наведении */
+.catalog-card:hover .catalog-card__img-box img {
+    transform: scale(1.1);
+}
